@@ -134,7 +134,7 @@ public class Contact implements Comparable<Contact> {
                 "select any of the choice in the below " +
                 "\n Hint -> 1. Display contact 2. edit existing contact 3.remove existing contact ");
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt(4);
+        int choice = scanner.nextInt();
         if (choice == 1) {
             System.out.println("display adress book");
             for (Contact e : contacts) {
@@ -144,7 +144,7 @@ public class Contact implements Comparable<Contact> {
             System.out.println("edit existing contact");
             System.out.println("select which contact have to edit" +
                     "ie.1 . mayur 2. nandini 3.yamini 4.katrina");
-            int edit = scanner.nextInt(5);
+            int edit = scanner.nextInt();
             if (edit == 1) {
                 System.out.println("mayur");
                 System.out.println("revise name");
@@ -163,6 +163,7 @@ public class Contact implements Comparable<Contact> {
                 contactOne.setZip(scanner.nextInt());
                 System.out.println("revise phoneNumber");
                 contactOne.setPhoneNumber(scanner.nextLong());
+                System.out.println("this is revised Address book");
                 for (Contact e : contacts) {
                     System.out.println(e);
                 }
@@ -184,6 +185,7 @@ public class Contact implements Comparable<Contact> {
                 contactTwo.setZip(scanner.nextInt());
                 System.out.println("revise phoneNumber");
                 contactTwo.setPhoneNumber(scanner.nextLong());
+                System.out.println("this is revised Address book");
                 for (Contact e : contacts) {
                     System.out.println(e);
                 }
@@ -205,6 +207,7 @@ public class Contact implements Comparable<Contact> {
                 contactThree.setZip(scanner.nextInt());
                 System.out.println("revise phoneNumber");
                 contactThree.setPhoneNumber(scanner.nextLong());
+                System.out.println("this is revised Address book");
                 for (Contact e : contacts) {
                     System.out.println(e);
                 }
@@ -226,14 +229,49 @@ public class Contact implements Comparable<Contact> {
                 contactFour.setZip(scanner.nextInt());
                 System.out.println("revise phoneNumber");
                 contactFour.setPhoneNumber(scanner.nextLong());
+                System.out.println("this is revised Address book");
                 for (Contact e : contacts) {
                     System.out.println(e);
                 }
             } else {
                 System.out.println("your address book is end");
             }
-        }else{
-            System.out.println("invalid input");
+
+        } else if (choice == 3) {
+            System.out.println("remove contact from the book");
+            System.out.println("edit existing contact");
+            System.out.println("select which contact have to edit" +
+                    "ie.1 . mayur 2. nandini 3.yamini 4.katrina");
+            int edit = scanner.nextInt();
+            if (edit == 1) {
+                contacts.remove(contactOne);
+                System.out.println("Successfully removed");
+                for (Contact e : contacts) {
+                    System.out.println(e);
+                }
+            } else if (edit == 2) {
+                System.out.println("Successfully removed");
+                contacts.remove(contactTwo);
+                for (Contact e : contacts) {
+                    System.out.println(e);
+                }
+            } else if (edit == 3) {
+                System.out.println("Successfully removed");
+                contacts.remove(contactThree);
+                for (Contact e : contacts) {
+                    System.out.println(e);
+                }
+            } else if (edit == 4) {
+                System.out.println("Successfully removed");
+                contacts.remove(contactFour);
+                for (Contact e : contacts) {
+                    System.out.println(e);
+                }
+            } else {
+                System.out.println("Invalid");
+            }
+        } else {
+            System.out.println("Invalid input");
         }
     }
 }
